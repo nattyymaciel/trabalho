@@ -13,7 +13,7 @@ int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){
 
    if(retorno==1){
       printf("\nJa existe uma imagem com este nome no arquivo.\n");
-   }else if(retorno==0){
+   }else{
       strcpy(img.nome, nomeImagem);
       gravaInfoImagem(arqFisicoImagensBase, img);
       
