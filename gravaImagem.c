@@ -10,7 +10,15 @@ int gravaImagem (char *nomeArqSaida, char *tipo, int lin, int col, int maxval, i
    else{
       printf("\nArquivo aberto.\n");
    }
-   fwrite(&img, sizeof(Imagem), 1, imagemComOperacoes);
+   fprintf(imagemComOperacoes, "%s\n", tipo);
+   fprintf(imagemComOperacoes, "%d %d\n", col, lin);
+   fprintf(imagemComOperacoes, "%d\n", maxval);
+   int i,j;
+   for(i=0; i<lin; i++){
+      for(j=0; j<col; j++){
+         fprintf(imagemComOperacoes, "%d ", mat[i][j]);
+      }
+   }
    
 
    fclose(imagemComOperacoes);

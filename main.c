@@ -70,10 +70,7 @@ int main(){
 		 	printf("\nDigite o nome da imagem a ser binarizada:\n");
 			auxNomeImagem=alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
-			printf("aqui ta indo");
-			
 			int nomeExiste=verificaCadastro(arqFisicoImagensBase, auxNomeImagem);
-
 			//aloca string tipo (p2)
 			tipo = alocaString(MAX_NAME);
 			//le arquivo imagem
@@ -85,7 +82,7 @@ int main(){
 			nomeArqSaida = alocaString(MAX_NAME);
 			scanf("%s",nomeArqSaida);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, nomeArqSaida);
-			while(nomeExiste!=1){
+			while(nomeExiste!=0){
 				printf("\nDigite o nome da imagem a ser binarizada:\n");
 				scanf("%s", nomeArqSaida);
 			}

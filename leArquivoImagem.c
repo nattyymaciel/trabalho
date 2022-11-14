@@ -6,7 +6,7 @@ int **leArquivoImagem (char *nomeArqEntrada, char *tipo, int *lin, int *col, int
     printf("\nErro em leArquivoImagem\n");
     return NULL;
    }
-   printf("Aqui");
+   
    fscanf(arq, "%s", tipo);
    fscanf(arq, "%d", lin);
    fscanf(arq, "%d", col);
