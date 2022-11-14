@@ -11,5 +11,5 @@ void negativo (int **mat, int lin, int col){
       for(j=0; j<col; j++){
          mat[i][j]=255-mat[i][j];
       }
-   } 
+   }
 }
