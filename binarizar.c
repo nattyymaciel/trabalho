@@ -4,7 +4,9 @@ o valor no indice será substituido por 255, se não, seu valor será 0.
 */
 
 void binarizar (int **mat, int lin, int col){
+
     int i,j;
+    
     //binarização da matriz (mat[i][j], lin, col);
     for(i=0; i<lin; i++){
         for(j=0; j<col; j++){

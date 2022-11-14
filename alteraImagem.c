@@ -10,7 +10,9 @@ Ao final é utilizado o fwrite para escrever no arquivo os dados modificados.
 int alteraImagem(char arqFisicoImagensBase[], int id){
    
    Imagem img;
+
    int posicao=0, i, j;// posição do id desejado
+
    FILE *arqFisicoImagem=fopen(arqFisicoImagensBase, "r+b");
    if(arqFisicoImagem == NULL){
       printf("\nErro no arquivo altera imagem\n");
@@ -43,10 +45,5 @@ int alteraImagem(char arqFisicoImagensBase[], int id){
    } else {
       fclose(arqFisicoImagem);
       return 0;
-   }
-   
-   
-
-   
-   
+   }  
 }

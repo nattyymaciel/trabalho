@@ -6,6 +6,7 @@ O ultimo indice da extension será o '\0'.
 */
 
 void getExtension(char nomeImagem[], char* extension[]){
+   
    int i, j, cont=0, aux=0;
    //cont representa posição de encontro do caracter ".";
    //aux representa o contador da extension;

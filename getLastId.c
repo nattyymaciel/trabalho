@@ -1,5 +1,5 @@
 #include "libTrabalho.h"
-/*A função verifica os IDS cadastrados no arquivo, a partir do ultimo id é aatribuido ao proximo  
+/*A função verifica os IDs cadastrados no arquivo, a partir do ultimo id é atribuido ao proximo  
 cadastro a ID seguinte
 */
 
@@ -8,6 +8,7 @@ int getLastId(char arqFisicoImagensBase[]){
    Imagem img;
    int lastId = 0;
    int num=0;
+   
    FILE *arqFisicoImagem = fopen(arqFisicoImagensBase, "a+b");
    if(arqFisicoImagem == NULL){
       printf("\nErro\n");

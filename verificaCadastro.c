@@ -9,10 +9,12 @@ int verificaCadastro(char arqFisicoImagensBase[], char nomeImagem[]){
          printf("\nArquivo vazio. Caso seja a primeira imagem a ser cadastrada, desconsiderar a mensagem.\n");
          return -1;
       }
+
    Imagem img;
 
    int i, j;
    int retorno=0, nomeIgual;
+   
    while (fread(&img, sizeof(Imagem), 1 ,arqFisicoImagem) !=0 && retorno==0){
       nomeIgual = 1;
       for(i=0; nomeImagem[i]!='\0', nomeIgual==1; i++){

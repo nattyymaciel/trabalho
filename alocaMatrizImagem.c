@@ -7,8 +7,10 @@ a matriz será desalocada.
 */
 
 int **alocaMatrizImagem (int lin, int col){
+
    int i; 
    int **mat;
+   
    mat=(int**)malloc(lin*sizeof(int*));
    if (mat== NULL){
       printf("\n Ocorreu erro em alocar matriz.\n");

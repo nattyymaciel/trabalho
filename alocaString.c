@@ -6,7 +6,8 @@ Casso ocorra erro a mensagem "memoria insuficiente" sera exibida e não será re
 
 char *alocaString (int size){
    
-   char *st; 
+   char *st;
+   
    st=(char *) malloc (size * sizeof(char));
    if(st==NULL){
       printf("\nMemoria Insuficiente.\n");

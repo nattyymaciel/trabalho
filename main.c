@@ -23,16 +23,17 @@ int main(){
      switch (opt){
 	     case 0:printf("Encerrando o sistema.\n");
 		    break;
-	     //===listaImagens	    
+	    	//===listaImagens	    
 	     case 1: //listaImagens
 		 	listaImagens(arqFisicoImagensBase);
   		    break; 
-	     //===cadastraImagem	    
+	     	//===cadastraImagem	    
 	     case 2:
 		    //cadastraImagem
 			printf("\nDigite o nome da imagem:\n");
 			auxNomeImagem=alocaString(MAX_NAME);
    			scanf(" %s", auxNomeImagem);
+
 			int imagemExiste = verificaExistenciaDeImagem(auxNomeImagem);
 			if (imagemExiste==1) {
 				cadastraImagem(arqFisicoImagensBase, auxNomeImagem);
@@ -49,13 +50,13 @@ int main(){
 			}
 			free(auxNomeImagem);
 		    break;
-             //===alteraImagem		    
+            //===alteraImagem		    
 	     case 3:
 		 	printf("\nDigite a ID da imagem a ser alterada:\n");
 			scanf("%d",&id);
+
 			int alterou;
 			alterou=alteraImagem(arqFisicoImagensBase, id);
-			
 			if(alterou=0){
 				printf("\nNão foi possivel alterar os dados da imagem.\n");
 			}
@@ -63,34 +64,39 @@ int main(){
 				printf("\nAlteração realizada com sucesso.\n");
 			}
 		    break; 
-             //===removeImagem 		    
+            //===removeImagem 		    
 	     case 4: 
 		 	printf("\nDigite a ID da imagem a remover: ");
 		    scanf("%d",&id);
 		    removeImagem(arqFisicoImagensBase, id);
 		    break;  
-             //===Binarizar		    
+            //===Binarizar		    
 	     case 5: 
 		 	printf("\nDigite o nome da imagem a ser binarizada:\n");
 			auxNomeImagem=alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
+
 			int nomeExiste=verificaCadastro(arqFisicoImagensBase, auxNomeImagem);
+
 			//aloca string tipo (p2)
 			tipo = alocaString(MAX_NAME);
+
 			//le arquivo imagem
 			matImagem = leArquivoImagem (auxNomeImagem, tipo, &lin, &col, &maxval);
+
 			//verificar o nome escolhido
 			printf("\nDigite o novo nome de saida do arquivo modificado:\n");
 			nomeArqSaida = alocaString(MAX_NAME);
 			scanf("%s",nomeArqSaida);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, nomeArqSaida);
-			//verificar o nome escolhido	
 			while(nomeExiste!=0){
 				printf("\nDigite o nome da imagem a ser binarizada: \n");
 				scanf("%s", nomeArqSaida);
 			}
+
 			//realizar o binarizar
 			binarizar(matImagem, lin, col);
+
 			//grava imagem
 			gravou=gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
 			if(gravou!=0){
@@ -107,10 +113,10 @@ int main(){
 					printf("\nOperação de binarização realizada com sucesso.\n");
 				}
 			}
+
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);
-		 	//binarizar(matImagem, lin, col);
 		   	break;
 	     	//===Ruído  	   
 	     case 6:  //ruido(matImagem, lin, col);	
@@ -118,21 +124,28 @@ int main(){
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, auxNomeImagem);
+
 			//aloca string tipo (p2)
 			tipo = alocaString(MAX_NAME);
+
 			//le arquivo imagem
 			matImagem = leArquivoImagem (auxNomeImagem, tipo, &lin, &col, &maxval);
+
+			//gravar arquivo de saida 
 			printf("\nDigite o novo nome de saida do arquivo modificado:\n");
 			nomeArqSaida = alocaString(MAX_NAME);
 			scanf("%s",nomeArqSaida);
-			nomeExiste=verificaCadastro(arqFisicoImagensBase, nomeArqSaida);
+
 			//verificar o nome escolhido	
+			nomeExiste=verificaCadastro(arqFisicoImagensBase, nomeArqSaida);
 			while(nomeExiste!=0){
 				printf("\nDigite o nome da imagem a ser binarizada: \n");
 				scanf("%s", nomeArqSaida);
 			}
+
 			//realizar o ruido sobre a imagem
 			ruido(matImagem, lin, col);
+
 			//grava imagem
 			gravou=gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
 			if(gravou!=0){
@@ -150,18 +163,21 @@ int main(){
 
 				}
 			}
+
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);
 		   	break;
-	      //===Negativo 	   
+	    	//===Negativo 	   
 	     case 7: //negativo(matImagem, lin, col);
 		 	printf("\nDigite o nome da imagem a ser transformada em negativa:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, auxNomeImagem);
+
 			//aloca string tipo (p2)
 			tipo = alocaString(MAX_NAME);
+
 			//le arquivo imagem
 			matImagem = leArquivoImagem (auxNomeImagem, tipo, &lin, &col, &maxval);
 			printf("\nDigite o novo nome de saida do arquivo modificado:\n");
@@ -173,8 +189,10 @@ int main(){
 				printf("\nDigite o nome da imagem a ser binarizada: \n");
 				scanf("%s", nomeArqSaida);
 			}
+
 			//realizar o nagativo na imagem
 			negativo(matImagem, lin, col);
+
 			//grava imagem
 			gravou = gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
 			if(gravou!=0){
@@ -191,33 +209,39 @@ int main(){
 					printf("\nOperação de negativar a imagem  realizada com sucesso.\n");
 				}
 			}
+
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);	
 		   	break;
-	     //====Espelhamento	    
+	     	//====Espelhamento	    
 	     case 8: //espelhar(matCop, lin, col);	
 			printf("\nDigite o nome da imagem a ser espelhada:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, auxNomeImagem);
+
 			//aloca string tipo (p2)
 			tipo = alocaString(MAX_NAME);
+
 			//le arquivo imagem
 			matImagem = leArquivoImagem (auxNomeImagem, tipo, &lin, &col, &maxval);
 			printf("\nDigite o novo nome de saida do arquivo modificado:\n");
 			nomeArqSaida = alocaString(MAX_NAME);
 			scanf("%s",nomeArqSaida);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, nomeArqSaida);
+
 			//verificar o nome escolhido	
 			while(nomeExiste!=0){
 				printf("\nDigite o nome da imagem a ser binarizada: \n");
 				scanf("%s", nomeArqSaida);
 			}
+
 			//espelhar a imagem
 			int **matCop= alocaMatrizImagem(lin, col);
    			copiaMatrizImagem (matImagem, matCop, lin, col);
 			espelhar(matCop, lin, col);
+
 			//grava imagem
 			gravou=gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matCop);
 			if(gravou!=0){
@@ -234,6 +258,7 @@ int main(){
 					printf("\nOperação de espelhar a imagem  realizada com sucesso.\n");
 				}
 			}
+
 			//desalocar matriz 
 			desalocaMatrizImagem(matCop, lin, col);
 			free(auxNomeImagem);

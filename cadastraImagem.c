@@ -19,7 +19,6 @@ int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){
       
       return 0;
    }
-
-   
+    
    return 1;
 }
