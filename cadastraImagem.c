@@ -16,10 +16,8 @@ int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){
    }else if(retorno==0){
       strcpy(img.nome, nomeImagem);
       gravaInfoImagem(arqFisicoImagensBase, img);
-      printf("\nImagem cadastrada no arquivo com sucesso.\n");
+      
       return 0;
-   }else{
-      printf("\nErro em realizar o cadastro.\n");
    }
 
    

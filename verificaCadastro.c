@@ -6,8 +6,8 @@ int verificaCadastro(char arqFisicoImagensBase[], char nomeImagem[]){
    
    FILE *arqFisicoImagem = fopen(arqFisicoImagensBase, "rb");
       if(arqFisicoImagem == NULL){
-         printf("\nArquivo vazio\n");
-         return 0;
+         printf("\nArquivo vazio. Caso seja a primeira imagem a ser cadastrada, desconsiderar a mensagem.\n");
+         return -1;
       }
    Imagem img;
 

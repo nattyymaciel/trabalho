@@ -23,22 +23,30 @@ int alteraImagem(char arqFisicoImagensBase[], int id){
    }
    rewind(arqFisicoImagem);
    fseek(arqFisicoImagem, posicao*sizeof(Imagem), SEEK_SET);
-   
-   char dono[MAX_NAME];
-   printf("\n Digite o nome do novo proprietario:\n");
-   scanf(" %s", dono);
-   
-    for (j=0; dono[j]!='\0'; j++) {
-      img.proprietario[j]=dono[j];
+
+   if (img.id == id) {
+      char dono[MAX_NAME];
+      printf("\n Digite o nome do novo proprietario:\n");
+      scanf(" %s", dono);
+      
+      for (j=0; dono[j]!='\0'; j++) {
+         img.proprietario[j]=dono[j];
+      }
+      img.proprietario[j]='\0';
+      struct tm tm =getSystemTime();
+      img.data_modificacao.dia = tm.tm_mday;
+      img.data_modificacao.mes = tm.tm_mon + 1;
+      img.data_modificacao.ano = tm.tm_year + 1900;  
+      fwrite(&img, sizeof(Imagem),1, arqFisicoImagem);
+      fclose(arqFisicoImagem);
+      return 1;
+   } else {
+      fclose(arqFisicoImagem);
+      return 0;
    }
-   img.proprietario[j]='\0';
-   struct tm tm =getSystemTime();
-   img.data_modificacao.dia = tm.tm_mday;
-   img.data_modificacao.mes = tm.tm_mon + 1;
-   img.data_modificacao.ano = tm.tm_year + 1900;  
-   fwrite(&img, sizeof(Imagem),1, arqFisicoImagem);
+   
+   
 
    
-   fclose(arqFisicoImagem);
-   return 1;
+   
 }

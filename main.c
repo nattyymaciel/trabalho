@@ -38,10 +38,10 @@ int main(){
 				cadastraImagem(arqFisicoImagensBase, auxNomeImagem);
 				int retorno;
 				if(retorno==0){
-					printf("\nImagem cadastrada com sucesso ESSE VEM DA MAIN.\n");
+					printf("\nImagem cadastrada com sucesso.\n");
 				}
 				else{
-					printf("\nErro em cadastrar imagem ESSE VEM DA MAIN\n");
+					printf("\nErro ao cadastrar imagem \n");
 				}
 			} 
 			else{
@@ -53,7 +53,15 @@ int main(){
 	     case 3:
 		 	printf("\nDigite a ID da imagem a ser alterada:\n");
 			scanf("%d",&id);
-			alteraImagem(arqFisicoImagensBase, id);
+			int alterou;
+			alterou=alteraImagem(arqFisicoImagensBase, id);
+			
+			if(alterou=0){
+				printf("\nNão foi possivel alterar os dados da imagem.\n");
+			}
+			else{
+				printf("\nAlteração realizada com sucesso.\n");
+			}
 		    break; 
              //===removeImagem 		    
 	     case 4: 
