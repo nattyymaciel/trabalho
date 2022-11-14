@@ -83,7 +83,7 @@ int main(){
 			scanf("%s",nomeArqSaida);
 			nomeExiste=verificaCadastro(arqFisicoImagensBase, nomeArqSaida);
 			while(nomeExiste!=0){
-				printf("\nDigite o nome da imagem a ser binarizada:\n");
+				printf("\nDigite o nome da imagem a ser binarizada: \n");
 				scanf("%s", nomeArqSaida);
 			}
 			//realizar o binarizar
