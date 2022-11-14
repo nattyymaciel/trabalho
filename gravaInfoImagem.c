@@ -26,7 +26,7 @@ int gravaInfoImagem(char arqFisicoImagensBase[], Imagem img){
       img.proprietario[j]=dono[j];
    }
    img.proprietario[j]='\0';
-      //Para pegar/usar data do sistema
+      //Para pegar/usar data do sistema  
       //descomentar código a seguir
    struct tm tm =getSystemTime();
    img.data_criacao.dia = img.data_modificacao.dia = tm.tm_mday;
