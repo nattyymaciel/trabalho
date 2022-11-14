@@ -1,10 +1,11 @@
 #include "libTrabalho.h"
-
+/*A função vai ler os dados do arquivo e armzenar em variaveis os valores de tipo, largura, altura e maxVal
+*/
 int getDimension( char nomeImagem[], int *pAltura){
 	
 	int largura;
 	Imagem img;
-	//vide abertura da imagem e contar qtd de colunas
+	
 	FILE *arqFisicoImagem = fopen(nomeImagem, "r");
     if(arqFisicoImagem == NULL){
     	printf("\nErroa\n");
@@ -16,10 +17,6 @@ int getDimension( char nomeImagem[], int *pAltura){
     fscanf(arqFisicoImagem, "%d", &largura);
     fscanf(arqFisicoImagem, "%d", pAltura);
     fscanf(arqFisicoImagem, "%d", &maxVal);
-
-
-	
 	fclose(arqFisicoImagem);
-
 	return largura;
 }

@@ -20,10 +20,6 @@ int main(){
      //Função que mostra as opções para o usuário ao executar o programa	  
      menuOperacoes();
      scanf("%d", &opt);
-
-
-
-     
      switch (opt){
 	     case 0:printf("Encerrando o sistema.\n");
 		    break;
@@ -48,7 +44,7 @@ int main(){
 					printf("\nErro em cadastrar imagem ESSE VEM DA MAIN\n");
 				}
 			} 
-			else {
+			else{
 				printf("\nA imagem não existe no diretorio\n");
 			}
 			free(auxNomeImagem);
@@ -75,9 +71,7 @@ int main(){
 			tipo = alocaString(MAX_NAME);
 			//le arquivo imagem
 			matImagem = leArquivoImagem (auxNomeImagem, tipo, &lin, &col, &maxval);
-			
 			//verificar o nome escolhido
-			
 			printf("\nDigite o novo nome de saida do arquivo modificado:\n");
 			nomeArqSaida = alocaString(MAX_NAME);
 			scanf("%s",nomeArqSaida);
@@ -108,9 +102,9 @@ int main(){
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);
-		 //binarizar(matImagem, lin, col);
-		   break;
-	     //===Ruído  	   
+		 	//binarizar(matImagem, lin, col);
+		   	break;
+	     	//===Ruído  	   
 	     case 6:  //ruido(matImagem, lin, col);	
 			printf("\nDigite o nome da imagem a ser adicionado ruido:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
@@ -151,7 +145,7 @@ int main(){
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);
-		   break;
+		   	break;
 	      //===Negativo 	   
 	     case 7: //negativo(matImagem, lin, col);
 		 	printf("\nDigite o nome da imagem a ser transformada em negativa:\n");
@@ -173,7 +167,6 @@ int main(){
 			}
 			//realizar o nagativo na imagem
 			negativo(matImagem, lin, col);
-			//usar a getImage()
 			//grava imagem
 			gravou = gravaImagem(nomeArqSaida, tipo, lin, col, maxval, matImagem);
 			if(gravou!=0){
@@ -193,7 +186,7 @@ int main(){
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);	
-		   break;
+		   	break;
 	     //====Espelhamento	    
 	     case 8: //espelhar(matCop, lin, col);	
 			printf("\nDigite o nome da imagem a ser espelhada:\n");
@@ -236,7 +229,7 @@ int main(){
 			//desalocar matriz 
 			desalocaMatrizImagem(matCop, lin, col);
 			free(auxNomeImagem);
-		   break;		    
+		   	break;		    
 	     default: printf("\nOpção inválida");
      }
 

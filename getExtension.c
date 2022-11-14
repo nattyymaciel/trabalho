@@ -1,4 +1,9 @@
 #include "libTrabalho.h"
+/*A finção vai utilizar o ciclo for para rodar até que chegue no caracter '.' e contar em cada ciclo 
+o valor de indice, para que seja armazenado o local onde a extensão irá iniciar.
+Em seguida é udado um segundo for para que o ponteiro aponte para a estensão.
+O ultimo indice da extension será o '\0'.                         
+*/
 
 void getExtension(char nomeImagem[], char* extension[]){
    int i, j, cont=0, aux=0;

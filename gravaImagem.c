@@ -1,4 +1,7 @@
 #include "libTrabalho.h"
+/*a funcão vai abrir o arquivo e captar os novos dados da imagem que foi criada com
+ base na imagem original.
+*/
 
 int gravaImagem (char *nomeArqSaida, char *tipo, int lin, int col, int maxval, int **mat){
 
@@ -16,7 +19,7 @@ int gravaImagem (char *nomeArqSaida, char *tipo, int lin, int col, int maxval, i
    int i,j;
    for(i=0; i<lin; i++){
       for(j=0; j<col; j++){
-         fprintf(imagemComOperacoes, "%d ", mat[i][j]);// não esquecer o o espaço após o %d para q o arquivo tenha espaçamento entre os numeros de pixels
+        fprintf(imagemComOperacoes, "%d ", mat[i][j]);// não esquecer o o espaço após o %d para q o arquivo tenha espaçamento entre os numeros de pixels
       }
    }
    

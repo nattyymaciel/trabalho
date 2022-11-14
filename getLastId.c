@@ -1,4 +1,7 @@
 #include "libTrabalho.h"
+/*A função verifica os IDS cadastrados no arquivo, a partir do ultimo id é aatribuido ao proximo  
+cadastro a ID seguinte
+*/
 
 int getLastId(char arqFisicoImagensBase[]){
    

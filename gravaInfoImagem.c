@@ -1,11 +1,14 @@
 #include "libTrabalho.h"
+/*Ira abrir o arquivo e salvar os dados da imagem, caso não exista um arquivo, ele irá criar um para que
+os dados sejam salvos, sempre irá salvar na ultima posição
+*/
 
 int gravaInfoImagem(char arqFisicoImagensBase[], Imagem img){
 
    FILE *arqFisicoImagem = fopen(arqFisicoImagensBase, "a+b");
    if(arqFisicoImagem == NULL){
       printf("\nErro na leitura do arquivo. Execução finalizada.\n");
-      return 0;
+      return 1;
    }
    int num=0, i, j;
    //pegar ultimo id registrado

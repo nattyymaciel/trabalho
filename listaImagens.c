@@ -1,9 +1,8 @@
 #include "libTrabalho.h"
 
-/****** Completar *****/
+/*A função vai exibir em tela os dados da imagem
+*/
 void listaImagens(char arqFisicoImagensBase[]){
-   /****** Completar *****/
-   
    FILE *arqFisicoImagem = fopen(arqFisicoImagensBase, "r");
    if(arqFisicoImagem == NULL){
       printf("\nErro\n");

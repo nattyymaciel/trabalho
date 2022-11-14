@@ -1,6 +1,7 @@
 #include "libTrabalho.h"
-
-/****** Completar *****/
+/*A função irá realizar o "espelhamento" da imagem, onde a matriz final irá receber a matriz original com
+a coluna final sendo a coluna final menos o indice j
+*/
 void espelhar (int **mat, int lin, int col){
    int i, j;
    int **matAux= alocaMatrizImagem(lin, col);
@@ -10,5 +11,5 @@ void espelhar (int **mat, int lin, int col){
          mat[i][j]=matAux[i][col-j];
       }
    } 
-   free(matAux);
+   desalocaMatrizImagem(matAux, lin, col);
 }

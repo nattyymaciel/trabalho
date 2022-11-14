@@ -1,4 +1,11 @@
 #include "libTrabalho.h"
+/*A função alteraIagem vai realizar a alteração dos dados de nome de proprietario e data de MODIFICAÇÃO
+da imagem. Primeiro vamos abrir o arquivo no modo leitura e escrita, em seguida vamos ler o conteudo do 
+arquivo, onde cada leitura nos fornece a posição lida(no caso a quatidade de ID), até ue encontremos
+o ID desejado. Ao final da leitura rebobinamos o arquivo.
+Através do fseek, seek_set, vamos até a posição do ID desejado para então realizarmos as alterações desejada.
+Ao final é utilizado o fwrite para escrever no arquivo os dados modificados.
+*/
 
 int alteraImagem(char arqFisicoImagensBase[], int id){
    
