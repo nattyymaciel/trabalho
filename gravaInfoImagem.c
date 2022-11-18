@@ -1,6 +1,6 @@
 #include "libTrabalho.h"
 /*Ira abrir o arquivo e salvar os dados da imagem, caso não exista um arquivo, ele irá criar um para que
-os dados sejam salvos, sempre irá salvar na ultima posição
+os dados sejam salvos, sempre irá salvar na ultima posição do arquivo.
 */
 
 int gravaInfoImagem(char arqFisicoImagensBase[], Imagem img){

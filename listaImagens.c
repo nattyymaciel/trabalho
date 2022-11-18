@@ -1,6 +1,7 @@
 #include "libTrabalho.h"
 
-/*A função vai exibir em tela os dados da imagem
+/*A função vai exibir em tela os dados da imagem, tentei alinhar os dados, mas como os nomes possuem quantidade
+diferente de caracteres, não foi possivel
 */
 void listaImagens(char arqFisicoImagensBase[]){
 

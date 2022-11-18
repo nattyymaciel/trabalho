@@ -1,6 +1,7 @@
 #include "libTrabalho.h"
 /*É responsavel por realizar a leitura dos dados da imagem que já existe, ira alocar 
-memoria traves da função alocaMatrizImagem que é chamada aqui
+memoria traves da função alocaMatrizImagem que é chamada aqui, como retornarmos uma matriz aqui, o desalocamatriz
+será chamado depois, para que não ter risco de desalocar a matriz que nem chegou a ser usada ainda.
 */
 
 int **leArquivoImagem (char *nomeArqEntrada, char *tipo, int *lin, int *col, int *maxval){

@@ -5,7 +5,7 @@ int main(){
 
    //=======Variáveis para cadastro na base
   char arqFisicoImagensBase[] = "arqFisicoImagensBase.bin";
-  int id;// é diferente do id q esta no registro, serve para achar o registro desejado
+  int id;//é diferente do ID q esta no registro, serve para achar o registro desejado comparando com o ID armazenado no cadastro
   char nomeImagem[MAX_NAME];  
 
 
@@ -21,15 +21,15 @@ int main(){
      menuOperacoes();
      scanf("%d", &opt);
      switch (opt){
-	     case 0:printf("Encerrando o sistema.\n");
+	    case 0:printf("Encerrando o sistema.\n");
 		    break;
-	    	//===listaImagens	    
-	     case 1: //listaImagens
+	    case 1: //chamando a função listaImagens passando o arquivo de dados de imagem como parametro
 		 	listaImagens(arqFisicoImagensBase);
   		    break; 
-	     	//===cadastraImagem	    
-	     case 2:
-		    //cadastraImagem
+	    case 2:/*chamando a função cadastraImagem, para isso primeiro verificamos a existencia de imagem com o 
+				nome digitado no diretorio, se não exitir a imagem o usuario é informado, se existir chamamos a 
+				função cadastraImagem(demais informações sobre o processo de cadastro está na propria função cadastraImagem).
+				*/
 			printf("\nDigite o nome da imagem:\n");
 			auxNomeImagem=alocaString(MAX_NAME);
    			scanf(" %s", auxNomeImagem);
@@ -51,7 +51,7 @@ int main(){
 			free(auxNomeImagem);
 		    break;
             //===alteraImagem		    
-	     case 3:
+	    case 3:/*chamada da função de alteração do cadastro com base no ID referente a imagem desejada.*/
 		 	printf("\nDigite a ID da imagem a ser alterada:\n");
 			scanf("%d",&id);
 
@@ -65,13 +65,22 @@ int main(){
 			}
 		    break; 
             //===removeImagem 		    
-	     case 4: 
+	    case 4: 
 		 	printf("\nDigite a ID da imagem a remover: ");
 		    scanf("%d",&id);
 		    removeImagem(arqFisicoImagensBase, id);
 		    break;  
             //===Binarizar		    
-	     case 5: 
+	    case 5:/*Para o processo de binarização da imagem, primeiro é solicitado o nome da imagem(que deve existir já),
+		que será binarizada, para isso vamos chamar o alocaString para o auxNomeImagem, e então captado do teclado o nome,
+		em seguida verificamos a existencia do cadastro, pois se existe, podemos realizar a binarização. Como vamos usar 
+		o tipo P2 na montagem do arquivo da imagem modificado, vamos também alocar string para o tipo. Em seguida lemos o
+		arquivo, onde os dados serão salvos em matImagem.
+		Após termos a matriz disponivel, vamos verificar o nome da NOVA imagem, que NÃO pode existir no diretorio, portanto
+		verificamos o cadastro novamente e nos certificamos que o nome escolhido não existe no diretorio. Quando garantimos
+		que o nome não existe e está disponivel para uso ai sim podemos realizar a operação sobre a imagem, salvar a imagem
+		modificada do diretorio e seus dados em garavaInfoImagem.
+		Ao final como a imagem ja está salva e seus dados também, desalocamos a matriz e a string de auxNomeImagem*/
 		 	printf("\nDigite o nome da imagem a ser binarizada:\n");
 			auxNomeImagem=alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
@@ -118,8 +127,7 @@ int main(){
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);
 		   	break;
-	     	//===Ruído  	   
-	     case 6:  //ruido(matImagem, lin, col);	
+	    case 6:  //ruido(matImagem, lin, col);	
 			printf("\nDigite o nome da imagem a ser adicionado ruido:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
@@ -169,7 +177,7 @@ int main(){
 			free(auxNomeImagem);
 		   	break;
 	    	//===Negativo 	   
-	     case 7: //negativo(matImagem, lin, col);
+	    case 7: //negativo(matImagem, lin, col);
 		 	printf("\nDigite o nome da imagem a ser transformada em negativa:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
@@ -213,9 +221,9 @@ int main(){
 			//desalocar matriz 
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);	
-		   	break;
+			break;
 	     	//====Espelhamento	    
-	     case 8: //espelhar(matCop, lin, col);	
+	    case 8: //espelhar(matCop, lin, col);	
 			printf("\nDigite o nome da imagem a ser espelhada:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
@@ -262,11 +270,11 @@ int main(){
 			//desalocar matriz 
 			desalocaMatrizImagem(matCop, lin, col);
 			free(auxNomeImagem);
-		   	break;		    
-	     default: printf("\nOpção inválida");
-     }
+			break;		    
+		default: printf("\nOpção inválida\n");
+	}
 
-  }while (opt != 0);
+	}while (opt != 0);
 
-  return 0;
+	return 0;
 }
