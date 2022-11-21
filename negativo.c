@@ -1,5 +1,5 @@
 #include "libTrabalho.h"
-/*A função irá realizar a subtração do valor armazenado na matriz em determinado indice de 255.
+/*A função irá realizar a subtração do valor armazenado na matriz no determinado indice de 255.
 */
 void negativo (int **mat, int lin, int col){
 

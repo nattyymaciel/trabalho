@@ -2,7 +2,6 @@
 
 //Função para remover imagem com id da base arqFisicoImagensBase e do diretório corrente
 void removeImagem(char arqFisicoImagensBase[], int id){
-	
 	FILE *arq=fopen(arqFisicoImagensBase,"a+b");
 	if (arq == NULL){
 		printf("\nErro ao abrir arq - removeImagem\n");

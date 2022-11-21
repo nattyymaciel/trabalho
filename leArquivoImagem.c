@@ -11,14 +11,15 @@ int **leArquivoImagem (char *nomeArqEntrada, char *tipo, int *lin, int *col, int
     return NULL;
    }
    
-   fscanf(arq, "%s", tipo);
-   fscanf(arq, "%d", col);
-   fscanf(arq, "%d", lin);
-   fscanf(arq, "%d", maxval);
+   fscanf(arq, "%s", tipo);//primeira linha
+   fscanf(arq, "%d", col);//segunda linha, primeira coluna
+   fscanf(arq, "%d", lin);//segunda linha, segunda coluna
+   fscanf(arq, "%d", maxval);//terceira linha
 
 
     int **mat= alocaMatrizImagem(*lin, *col);
     int i,j;
+    //captura da matriz dado a dado
     for(i=0; i<(*lin); i++){
         for(j=0; j<(*col); j++){
             fscanf(arq, "%d", &mat[i][j]);
