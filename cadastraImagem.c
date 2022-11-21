@@ -1,7 +1,7 @@
 #include "libTrabalho.h"
 /*Na função cadastraImagem foi verificada a existencia de cadastro no arquivo com o mesmo nome de 
-imagem existente, se houver, não será feito o cadastro, se não houver o nome digitado na main será copiado 
-para o img.nome. Em seguida será chamado o gravaInfoImagem
+imagem existente, se houver, não será feito o cadastro e, se não houver, o nome digitado na main será copiado 
+para o img.nome. Em seguida será chamado o gravaInfoImagem.
 */
 
 int cadastraImagem(char arqFisicoImagensBase[], char nomeImagem[]){

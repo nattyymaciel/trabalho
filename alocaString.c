@@ -1,7 +1,7 @@
 #include "libTrabalho.h"
 /*A função alocaString irá liberar a quantidade de memoria necessaria para realizar o cadastro de nome
 da imagem e de seu tipo(P2).
-Casso ocorra erro a mensagem "memoria insuficiente" sera exibida e não será realizada a alocação.
+Caso ocorra erro a mensagem "memoria insuficiente" sera exibida e será feita a locação de memoria para size 0.
 */
 
 char *alocaString (int size){

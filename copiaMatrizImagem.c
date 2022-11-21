@@ -1,5 +1,6 @@
 #include "libTrabalho.h"
-/*A função realiza a copia da matriz original para que possa ser realizada operações sobre a matriz
+/*A função realiza a copia da matriz original para que possa ser realizada operações sobre a matriz.
+Usada para espelhar a matriz.
 */
 void copiaMatrizImagem (int **mat, int **matCopia, int lin, int col){
 

@@ -1,6 +1,7 @@
 #include "libTrabalho.h"
 /*A função vai ler os dados do arquivo e armazenar em variaveis os valores de tipo, largura, altura e maxVal da
-imagem passada como parametro
+imagem passada como parametro.
+Retorna a largura, que é as colunas da matriz, localizada na segunda linha, primeiro indice.
 */
 int getDimension( char nomeImagem[], int *pAltura){
 	

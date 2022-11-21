@@ -1,6 +1,6 @@
 #include "libTrabalho.h"
 /*A função irá realizar o "espelhamento" da imagem, onde a matriz final irá receber a matriz original com
-a coluna final sendo a coluna final menos o indice j
+a nova coluna final sendo a coluna final menos o indice j.
 */
 void espelhar (int **mat, int lin, int col){
 

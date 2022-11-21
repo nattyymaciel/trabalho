@@ -1,6 +1,6 @@
 #include "libTrabalho.h"
 /*É aberto o arquivo e então lido e comparado os nomes, o nome digitado na main e os nomes existentes no arquivo, se os
-nomes forem iguais é encerrado o programa, se forem diferentes então é liberado para que seja cadastrado no arquivo
+nomes forem iguais é encerrado o programa, se forem diferentes então é liberado para que seja cadastrado no arquivo.
 */
 int verificaCadastro(char arqFisicoImagensBase[], char nomeImagem[]){
    

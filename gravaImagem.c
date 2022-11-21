@@ -1,6 +1,6 @@
 #include "libTrabalho.h"
 /*A funcão vai abrir o arquivo e "captar" os novos dados da imagem que foi criada com
- base na imagem original.
+base na imagem original.
 */
 
 int gravaImagem (char *nomeArqSaida, char *tipo, int lin, int col, int maxval, int **mat){

@@ -1,6 +1,6 @@
 #include "libTrabalho.h"
 /*Para binarizar a matriz foi realizado um ciclo for, onde se o valor do indice fosse maior ou igual a 127,
-o valor no indice será substituido por 255, se não, seu valor será 0.
+o valor no indice seria substituido por 255, se não, seu valor será 0.
 */
 
 void binarizar (int **mat, int lin, int col){

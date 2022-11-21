@@ -14,16 +14,16 @@ int gravaInfoImagem(char arqFisicoImagensBase[], Imagem img){
 
    //pegar ultimo id registrado
    img.id=getLastId(arqFisicoImagensBase);
-   //como é novo cadastro, add mais 1 ao id ja existente
+   //como é novo cadastro, adiciona mais 1 ao ID ja existente
    img.id++;
 
    char *tipo = img.tipo;
-   getExtension(img.nome, &tipo);
+   getExtension(img.nome, &tipo);//pega o pmg do nome da imagem
 
    img.size=getSize(img.nome);
 
    int altura;
-   int largura=getDimension(img.nome, &altura);
+   int largura=getDimension(img.nome, &altura);//passado o endereço da altura(COL), para que localize o dado seguinte, a largura(LIN).
    img.dimensao.largura=largura;
    img.dimensao.altura=altura;
 

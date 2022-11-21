@@ -127,7 +127,11 @@ int main(){
 			desalocaMatrizImagem(matImagem, lin, col);
 			free(auxNomeImagem);
 		   	break;
-	    case 6:  //ruido(matImagem, lin, col);	
+	    case 6://ruido(matImagem, lin, col);
+		/*Para o processo de adicionar o ruido na imagem será captado o nome da imagem original, verificado a existencia
+		do cadastro(passos iguais ao de binarizar, a diferença ocorre a dentro da função ruido, onde o nome a matriz, lin e col
+		são passados como parametro.
+		Explicação sobre a função dentro do arquivo da função.*/	
 			printf("\nDigite o nome da imagem a ser adicionado ruido:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
@@ -178,6 +182,7 @@ int main(){
 		   	break;
 	    	//===Negativo 	   
 	    case 7: //negativo(matImagem, lin, col);
+		/*Seguem comentario similar ao do case 6(operação de ruido sobre a imagem)*/
 		 	printf("\nDigite o nome da imagem a ser transformada em negativa:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
@@ -223,7 +228,13 @@ int main(){
 			free(auxNomeImagem);	
 			break;
 	     	//====Espelhamento	    
-	    case 8: //espelhar(matCop, lin, col);	
+	    case 8: //espelhar(matCop, lin, col);
+		/*Diferente da operação de ruido, negativo e binarizar, aqui é necessario realizar a copia da matriz original para
+		que possamos realizar o espelhamento da imagem. Por tanto, criamos um ponteiro de ponteiro(**matCop) e alocamos matriz
+		para ele, em seguida chmamos a função copia matriz, onde a matriz original, a copia com memoria alocada, lin e col 
+		são passados como parametro.
+		Após essas etapas então podemos chamar a função que irá realizar a operação de espelhar a imagem.
+		Finalizada como as operações anteriores.*/	
 			printf("\nDigite o nome da imagem a ser espelhada:\n");
 			auxNomeImagem = alocaString(MAX_NAME);
 			scanf("\n%[^\n]s", auxNomeImagem);
